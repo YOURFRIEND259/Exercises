@@ -8,7 +8,7 @@ public class Test
         int wynik = 0;
         int iloczyn=1;//mnoznik danej cyfry
 
-        for(int i=0;i<11;i++)
+        for(int i=0;i<pesel.Length;i++)
             {
                 string cyfra=pesel.Substring(i,1);
                 int npesel = Int32.Parse(cyfra);
