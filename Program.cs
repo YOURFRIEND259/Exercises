@@ -1,8 +1,8 @@
 ﻿using System;
 
-public class Test
+class Test
 {
-	public static void Main()
+	static void Main()
 	{
 		string? pesel = Console.ReadLine();
         int wynik = 0;
@@ -33,5 +33,10 @@ public class Test
             {
                 Console.WriteLine("N");
             }}
+            Console.ReadKey();
 	}
+    static double Dziel(int x, double y)
+    {
+        return (y/x);
+    }
 }
