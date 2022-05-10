@@ -4,10 +4,23 @@ class Test
 {
 	static void Main()
 	{
-		string? pesel = Console.ReadLine();
+        Console.WriteLine(Dziel(1,2.5));
+        string? pesel = Console.ReadLine();
+        Console.WriteLine(Pesel(pesel));
+        Console.ReadKey();
+	}
+    static double Dziel(int x, double y)
+    {
+        return (y/x);
+    }
+    static string Pesel(string pesel)
+    {
+        
         int wynik = 0;
         int iloczyn=1;//mnoznik danej cyfry
-
+        string n = "N";
+        string d = "D";
+        string x= "zla wartosc ";
         for(int i=0;i<pesel.Length;i++)
             {
                 string cyfra=pesel.Substring(i,1);
@@ -24,19 +37,11 @@ class Test
                 wynik+=npesel*iloczyn;
                 iloczyn=iloczyn+2;
             }
+//            return wynik;
         if(wynik>0)
-            {if (wynik%10==0)
-                {
-                    Console.WriteLine("D");
-                }
-            else
-            {
-                Console.WriteLine("N");
-            }}
-            Console.ReadKey();
-	}
-    static double Dziel(int x, double y)
-    {
-        return (y/x);
+            {if (wynik%10==0) return d;
+            else return n;
+            }
+        else return x;
     }
 }
