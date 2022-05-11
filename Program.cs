@@ -7,6 +7,7 @@ class Test
         Console.WriteLine(Dziel(1,2.5));
         string? pesel = Console.ReadLine();
         Console.WriteLine(Pesel(pesel));
+        Console.WriteLine(NWD(2,3));
         Console.ReadKey();
 	}
     static double Dziel(int x, double y)
@@ -15,7 +16,6 @@ class Test
     }
     static string Pesel(string pesel)
     {
-        
         int wynik = 0;
         int iloczyn=1;//mnoznik danej cyfry
         string n = "N";
@@ -39,9 +39,15 @@ class Test
             }
 //            return wynik;
         if(wynik>0)
-            {if (wynik%10==0) return d;
-            else return n;
+            {
+                if (wynik%10==0) return d;
+                else return n;
             }
         else return x;
+    }
+    static int NWD(int a, int b)
+    {
+        if(b==0) return a;
+        else return NWD(b, a%b);
     }
 }
