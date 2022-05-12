@@ -1,9 +1,26 @@
 ﻿using System;
 
-class Test
+public class Pracownik
+{
+    public string nazwisko;
+    private double zarobki;
+
+    public Pracownik(string n, double x)
+    {
+        nazwisko=n;
+        zarobki=x;
+    }
+    public void wykaz_pracownikow()
+    {
+        Console.WriteLine("Nazwisko:{0} Zarobki: {1}",nazwisko,zarobki);
+    }
+}
+class Program
 {
 	static void Main()
 	{
+        Pracownik p1=new Pracownik("Borys",2100);
+        p1.wykaz_pracownikow();
         Console.WriteLine(Dziel(1,2.5));
         string? pesel = Console.ReadLine();
         Console.WriteLine(Pesel(pesel));
