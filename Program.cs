@@ -19,7 +19,7 @@ class Program
 {
 	static void Main()
 	{
-        Pracownik p1=new Pracownik("Kowalski",2150);
+        Pracownik p1=new Pracownik("Kowalski",2100);
         p1.wykaz_pracownikow();
         Console.WriteLine(Dziel(1,2.5));
         string? pesel = Console.ReadLine();
