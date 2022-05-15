@@ -3,7 +3,7 @@
 public class Pracownik
 {
     public string nazwisko;
-    private double zarobki;
+    public double zarobki{set;private get;}
 
     public Pracownik(string n, double x)
     {
