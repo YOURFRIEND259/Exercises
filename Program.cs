@@ -3,7 +3,7 @@
 public class Pracownik
 {
     public string nazwisko;
-    public double zarobki{set;private get;}
+    public double zarobki{set; get;}
 
     public Pracownik(string n, double x)
     {
@@ -19,14 +19,31 @@ class Program
 {
 	static void Main()
 	{
-        Pracownik p1=new Pracownik("Kowalski",2200);
-        p1.wykaz_pracownikow();
+        Pracownik[] tab=new Pracownik[3];
+        tab[0]=new Pracownik("Kowalski",2200);
+        tab[1]=new Pracownik("Kowal",1200);
+        tab[2]=new Pracownik("Koski",3200);
+        foreach(Pracownik p in tab)
+        {
+            p.wykaz_pracownikow();
+        }
+        Console.WriteLine(Sumuj(tab));
+        tab[1].wykaz_pracownikow();
         Console.WriteLine(Dziel(1,2.5));
         string? pesel = Console.ReadLine();
         Console.WriteLine(Pesel(pesel));
         Console.WriteLine(NWD(2,3));
         Console.ReadKey();
 	}
+    public static double Sumuj(Pracownik[] tab)
+    {
+        double suma=0;
+        for(int i=0; i < tab.Length;i++)
+        {
+            suma+=tab[i].zarobki;
+        }
+        return suma;
+    }
     static double Dziel(int x, double y)
     {
         return (y/x);
