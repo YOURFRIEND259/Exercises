@@ -13,6 +13,6 @@
         }
         public void jakisamochod_p()
         {
-            Console.WriteLine("Marka:{0} cena:{1} kolor:{2}",marka,cena,kolor);
+            Console.WriteLine("Marka:{0} \ncena:{1:C} \nkolor:{2}",marka,cena,kolor);
         }
     }

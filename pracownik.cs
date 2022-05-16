@@ -10,6 +10,6 @@
         }
         public void wykaz_pracownikow()
         {
-            Console.WriteLine("Nazwisko:{0} Zarobki: {1}",nazwisko,zarobki);
+            Console.WriteLine("Nazwisko:{0} \nZarobki: {1:C}",nazwisko,zarobki);
         }
     }
