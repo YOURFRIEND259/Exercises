@@ -1,5 +1,30 @@
 ﻿using System;
 
+public class Samochod
+{
+    public string marka;
+    public string model;
+    public double pojemnosc;
+    public double cena;
+    public string kolor;
+
+    public Samochod(string m, string m2, double p, double c, string k)
+    {
+        marka=m;
+//        model=m2;
+//        pojemnosc=p;
+        cena=c;
+        kolor=k;
+    }
+    public void jakisamochod_p()
+    {
+        Console.WriteLine("Marka:{0} cena:{1} kolor:{2}",marka,cena,kolor);
+    }
+
+
+
+
+}
 public class Pracownik
 {
     public string nazwisko;
@@ -19,6 +44,7 @@ class Program
 {
 	static void Main()
 	{
+        Samochod sam1= new Samochod("BWM","jakis model",11.1,2200.00,"zieony");
         Pracownik[] tab=new Pracownik[3];
         tab[0]=new Pracownik("Kowalski",2200);
         tab[1]=new Pracownik("Kowal",1200);
@@ -29,6 +55,7 @@ class Program
         }
         Console.WriteLine(Sumuj(tab));
         tab[1].wykaz_pracownikow();
+        sam1.jakisamochod_p();
         Console.WriteLine(Dziel(1,2.5));
         string? pesel = Console.ReadLine();
         Console.WriteLine(Pesel(pesel));
