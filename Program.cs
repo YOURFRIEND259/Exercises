@@ -2,17 +2,13 @@
 
 public class Samochod
 {
-    public string marka;
-    public string model;
-    public double pojemnosc;
-    public double cena;
-    public string kolor;
-
+    public string marka,model,kolor;
+    public double pojemnosc,cena;
     public Samochod(string m, string m2, double p, double c, string k)
     {
         marka=m;
-//        model=m2;
-//        pojemnosc=p;
+        model=m2;
+        pojemnosc=p;
         cena=c;
         kolor=k;
     }
@@ -20,10 +16,6 @@ public class Samochod
     {
         Console.WriteLine("Marka:{0} cena:{1} kolor:{2}",marka,cena,kolor);
     }
-
-
-
-
 }
 public class Pracownik
 {
@@ -98,7 +90,6 @@ class Program
                 wynik+=npesel*iloczyn;
                 iloczyn=iloczyn+2;
             }
-//            return wynik;
         if(wynik>0)
             {
                 if (wynik%10==0) return d;
