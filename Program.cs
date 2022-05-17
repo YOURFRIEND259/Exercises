@@ -3,7 +3,7 @@ namespace Trening
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
             Samochod sam1= new Samochod("BWM","jakis model",11.1,2200.00,"zieony");
             Pracownik[] tab=new Pracownik[3];
@@ -17,10 +17,14 @@ namespace Trening
             Console.WriteLine(Sumuj(tab));
             tab[1].wykaz_pracownikow();
             sam1.jakisamochod_p();
+            Console.WriteLine("give string to revese: ");
+            string? sting=Console.ReadLine();
             Console.WriteLine(Dziel(2,2.5));
+            Console.WriteLine("podaj pesel: ");
             string? pesel = Console.ReadLine();
             Console.WriteLine(Pesel(pesel));
             Console.WriteLine(NWD(2,3));
+            Reverse(sting);
             Console.ReadKey();
         }
         public static double Sumuj(Pracownik[] tab)
@@ -31,6 +35,18 @@ namespace Trening
                 suma+=tab[i].zarobki;
             }
             return suma;
+        }
+        static void Reverse(string str)
+        {
+            char[] charArray=str.ToCharArray();
+            for(int i=0, j=str.Length-1; i<j; i++, j--)
+            {
+                charArray[i]=str[j];
+                charArray[j]=str[i];
+            }
+            string reverse=new string (charArray);
+            Console.WriteLine(reverse);
+            
         }
         static double Dziel(int x, double y)
         {

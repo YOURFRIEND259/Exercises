@@ -1,4 +1,3 @@
-
     public class Samochod
     {
         public string marka,model,kolor;
