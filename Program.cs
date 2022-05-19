@@ -5,6 +5,8 @@ namespace Trening
     {
         static void Main(string[] args)
         {
+            Samochod opel;
+            opel=new Samochod ("opel","jakis inny model",33.3,4500.00,"czerwony");
             Samochod sam1= new Samochod("BWM","jakis model",11.1,2200.00,"zieony");
             Pracownik[] tab=new Pracownik[3];
             tab[0]=new Pracownik("Kowalski",2200);
@@ -17,16 +19,41 @@ namespace Trening
             Console.WriteLine(Sumuj(tab));
             tab[1].wykaz_pracownikow();
             sam1.jakisamochod_p();
+            opel.jakisamochod_p();
             Console.WriteLine("give string to revese: ");
             string? sting=Console.ReadLine();
             Console.WriteLine(Dziel(2,2.5));
             Console.WriteLine("podaj pesel: ");
-            string? pesel = Console.ReadLine();
-            Console.WriteLine(Pesel(pesel));
+            string pesel = Console.ReadLine();
+            if (int.TryParse(pesel, out int value))
+            {
+                Console.WriteLine(Pesel(pesel));
+            }
+            else
+            {
+                Console.WriteLine("zla wartosc");
+            }
             Console.WriteLine(NWD(2,3));
+            Console.WriteLine(Prime(12));
             Reverse(sting);
             Console.ReadKey();
         }
+        static bool Prime(int liczba)
+        {
+            if(liczba<=0)
+            {
+                Console.WriteLine("podano zla wartosc");
+                return false;
+            }
+            if (liczba==1)return false;
+            if (liczba==2)return true;
+            for(int i=3;i<liczba;i+=2)
+            {
+                if(liczba%i==0) return false;
+            }
+            return true;
+        }
+
         public static double Sumuj(Pracownik[] tab)
         {
             double suma=0;
@@ -36,6 +63,7 @@ namespace Trening
             }
             return suma;
         }
+
         static void Reverse(string str)
         {
             char[] charArray=str.ToCharArray();
@@ -52,6 +80,7 @@ namespace Trening
         {
             return (y/x);
         }
+
         static string Pesel(string pesel)
         {
             int wynik = 0;
@@ -82,6 +111,7 @@ namespace Trening
                 }
             else return x;
         }
+
         static int NWD(int a, int b)
         {
             if(b==0) return a;
