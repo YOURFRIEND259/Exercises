@@ -8,6 +8,7 @@ namespace Trening
             Samochod opel;
             opel=new Samochod ("opel","jakis inny model",33.3,4500.00,"czerwony");
             Samochod sam1= new Samochod("BWM","jakis model",11.1,2200.00,"zieony");
+            sam1.Jezdzi();
             Pracownik[] tab=new Pracownik[3];
             tab[0]=new Pracownik("Kowalski",2200);
             tab[1]=new Pracownik("Kowal",1200);

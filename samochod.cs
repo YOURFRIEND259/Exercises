@@ -1,4 +1,15 @@
-    public class Samochod
+abstract class Pojazdy
+{
+    public void Jezdzi()
+    {
+        Console.WriteLine("to jezdzi");
+    }
+}
+    
+    
+    
+    
+class Samochod: Pojazdy
     {
         public string marka,model,kolor;
         public double pojemnosc,cena;
