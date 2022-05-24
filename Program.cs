@@ -11,10 +11,10 @@ namespace Trening
 
             Thread thread1=new Thread(CountDown);
             Thread thread2=new Thread(CountUp);
-            thread1.Start();
-            thread2.Start();
-            
-            Console.WriteLine(mainThread.Name+"is complete!!!");
+//            thread1.Start();
+//            thread2.Start();
+
+//            Console.WriteLine(mainThread.Name+" is complete!!!");
             
             Samochod opel;
             opel=new Samochod ("opel","jakis inny model",33.3,4500.00,"czerwony");
@@ -33,10 +33,10 @@ namespace Trening
             sam1.jakisamochod_p();
             opel.jakisamochod_p();
             Console.WriteLine("give string to revese: ");
-            string? sting=Console.ReadLine();
+            var sting=Console.ReadLine();
             Console.WriteLine(Dziel(2,2.5));
             Console.WriteLine("podaj pesel: ");
-            string pesel = Console.ReadLine();
+            var pesel = Console.ReadLine();
             if (int.TryParse(pesel, out int value))
             {
                 Console.WriteLine(Pesel(pesel));
@@ -76,7 +76,7 @@ namespace Trening
             return suma;
         }
 
-        static void Reverse(string str)
+        static void Reverse(string? str)
         {
             char[] charArray=str.ToCharArray();
             for(int i=0, j=str.Length-1; i<j; i++, j--)
