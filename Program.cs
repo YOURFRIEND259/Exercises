@@ -16,10 +16,12 @@ namespace Trening
 
 //            Console.WriteLine(mainThread.Name+" is complete!!!");
             
-            Samochod opel;
-            opel=new Samochod ("opel","jakis inny model",33.3,4500.00,"czerwony");
+            Samochod opel=new Samochod ("opel","jakis inny model",33.3,4500.00,"czerwony");
             Samochod sam1= new Samochod("BWM","jakis model",11.1,2200.00,"zieony");
             sam1.Jezdzi();
+            Rower bmx=new Rower("BMX","x241",0,300,"czarny");
+            bmx.jaki_pojazd();
+            bmx.Jezdzi();
             Pracownik[] tab=new Pracownik[3];
             tab[0]=new Pracownik("Kowalski",2200);
             tab[1]=new Pracownik("Kowal",1200);
@@ -40,12 +42,14 @@ namespace Trening
             if (int.TryParse(pesel, out int value))
             {
                 Console.WriteLine(Pesel(pesel));
+                Console.WriteLine();
             }
             else
             {
                 Console.WriteLine("zla wartosc");
             }
             Console.WriteLine(NWD(2,3));
+            Console.WriteLine();
             Console.WriteLine(Prime(12));
             Reverse(sting);
             Console.ReadKey();
@@ -63,6 +67,7 @@ namespace Trening
             {
                 if(liczba%i==0) return false;
             }
+            Console.WriteLine();
             return true;
         }
 
@@ -73,6 +78,7 @@ namespace Trening
             {
                 suma+=tab[i].zarobki;
             }
+            Console.WriteLine();
             return suma;
         }
 
@@ -86,6 +92,7 @@ namespace Trening
             }
             string reverse=new string (charArray);
             Console.WriteLine(reverse);
+            Console.WriteLine();
             
         }
         static double Dziel(int x, double y)
