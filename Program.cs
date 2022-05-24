@@ -39,9 +39,9 @@ namespace Trening
             Console.WriteLine(Dziel(2,2.5));
             Console.WriteLine("podaj pesel: ");
             var pesel = Console.ReadLine();
-            if (int.TryParse(pesel, out int value))
+            if (!(int.TryParse(pesel, out int value)))
             {
-                Console.WriteLine(Pesel(pesel));
+                Console.WriteLine(Pesel(pesel!));
                 Console.WriteLine();
             }
             else
@@ -84,7 +84,7 @@ namespace Trening
 
         static void Reverse(string? str)
         {
-            char[] charArray=str.ToCharArray();
+            char[] charArray=str!.ToCharArray();
             for(int i=0, j=str.Length-1; i<j; i++, j--)
             {
                 charArray[i]=str[j];

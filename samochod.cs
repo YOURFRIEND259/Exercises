@@ -4,14 +4,9 @@ abstract class Pojazdy
         public string model{ get; set; } = null!;
         public string kolor{ get; set; } = null!;
         public double pojemnosc,cena;
-    public virtual void Jezdzi()
-    {
-        
-    }
-    public virtual void jaki_pojazd()
-    {
-        
-    }
+    public abstract void Jezdzi();
+    public abstract void jaki_pojazd();
+
 }
 class Samochod : Pojazdy
     {
