@@ -30,8 +30,8 @@ namespace Trening
             }
             Console.WriteLine(Sumuj(tab));
             tab[1].wykaz_pracownikow();
-            sam1.jakisamochod_p();
-            opel.jakisamochod_p();
+            sam1.jaki_pojazd();
+            opel.jaki_pojazd();
             Console.WriteLine("give string to revese: ");
             var sting=Console.ReadLine();
             Console.WriteLine(Dziel(2,2.5));

@@ -8,15 +8,13 @@ abstract class Pojazdy
     {
         
     }
+    public virtual void jaki_pojazd()
+    {
+        
+    }
 }
-    
-    
-    
-    
 class Samochod : Pojazdy
     {
-
-        
         public Samochod(string m, string m2, double p, double c, string k)
         {
             marka=m;
@@ -25,9 +23,46 @@ class Samochod : Pojazdy
             cena=c;
             kolor=k;
         }
-        public void jakisamochod_p()
+        public override void jaki_pojazd()
         {
-            Console.WriteLine("Marka:{0} \ncena:{1:C} \nkolor:{2}",marka,cena,kolor);
+            Console.WriteLine("Dane samochodu: \nMarka:{0} \ncena:{1:C} \nkolor:{2}",marka,cena,kolor);
+        }
+        public override void Jezdzi()
+        {
+            Console.WriteLine("ten samochod jezdzi");
+        }
+    }
+class Rower : Pojazdy
+    {
+        public Rower(string m, string m2, double p, double c, string k)
+        {
+            marka=m;
+            model=m2;
+            pojemnosc=p;
+            cena=c;
+            kolor=k;
+        }
+        public override void jaki_pojazd()
+        {
+            Console.WriteLine("Dane roweru: \nMarka:{0} \ncena:{1:C} \nkolor:{2}",marka,cena,kolor);
+        }
+        public override void Jezdzi()
+        {
+            Console.WriteLine("ten samochod jezdzi");
+        }
+    }class Lodz : Pojazdy
+    {
+        public Lodz(string m, string m2, double p, double c, string k)
+        {
+            marka=m;
+            model=m2;
+            pojemnosc=p;
+            cena=c;
+            kolor=k;
+        }
+        public override void jaki_pojazd()
+        {
+            Console.WriteLine("Dane Lodzi: \nMarka:{0} \ncena:{1:C} \nkolor:{2}",marka,cena,kolor);
         }
         public override void Jezdzi()
         {
