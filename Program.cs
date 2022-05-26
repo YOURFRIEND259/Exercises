@@ -16,49 +16,76 @@ namespace Trening
 
 //            Console.WriteLine(mainThread.Name+" is complete!!!");
             
+            Menu();
+            
             Samochod opel=new Samochod ("opel","jakis inny model",33.3,4500.00,"czerwony");
             Samochod sam1= new Samochod("BWM","jakis model",11.1,2200.00,"zieony");
             sam1.Jezdzi();
             Rower bmx=new Rower("BMX","x241",0,300,"czarny");
             bmx.jaki_pojazd();
             bmx.Jezdzi();
+
             Pracownik[] tab=new Pracownik[3];
             tab[0]=new Pracownik("Kowalski",2200);
             tab[1]=new Pracownik("Kowal",1200);
             tab[2]=new Pracownik("Koski",3200);
+
             foreach(Pracownik p in tab)
             {
                 p.wykaz_pracownikow();
             }
-            Console.WriteLine(Sumuj(tab));
+
+            Console.WriteLine(Sumuj(tab)+"\n");
             tab[1].wykaz_pracownikow();
+
             sam1.jaki_pojazd();
             opel.jaki_pojazd();
+
             Console.WriteLine("give string to revese: ");
             var sting=Console.ReadLine();
-            Console.WriteLine(Dziel(2,2.5));
+
+            Console.WriteLine(Dziel(2,2.5)+"\n");
+
             Console.WriteLine("podaj pesel: ");
             var pesel = Console.ReadLine();
+
             if (!(int.TryParse(pesel, out int value)))
             {
-                Console.WriteLine(Pesel(pesel!));
-                Console.WriteLine();
+                Console.WriteLine(Pesel(pesel!)+"\n");
             }
             else
             {
-                Console.WriteLine("zla wartosc");
+                Console.WriteLine("zla wartosc\n");
             }
-            Console.WriteLine(NWD(2,3));
-            Console.WriteLine();
-            Console.WriteLine(Prime(12));
+            Console.WriteLine(NWD(2,3)+"\n");
+
+            Console.WriteLine(Prime(12)+"\n");
+
             Reverse(sting);
             Console.ReadKey();
         }
+
+static void Menu()
+{            List<String> menu=new List<String>();
+            
+            menu.Add("carbonara");
+            menu.Add("pizza hawajska");
+            menu.Add("ratatuj");
+            menu.Add("beef wellington");
+            menu.Add("pomidorowa");
+            menu.Add("nalesniki");
+
+            foreach(String item in menu)
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadKey();}
+
         static bool Prime(int liczba)
         {
             if(liczba<=0)
             {
-                Console.WriteLine("podano zla wartosc");
+                Console.WriteLine("podano zla wartosc\n");
                 return false;
             }
             if (liczba==1)return false;
@@ -67,7 +94,6 @@ namespace Trening
             {
                 if(liczba%i==0) return false;
             }
-            Console.WriteLine();
             return true;
         }
 
@@ -78,7 +104,6 @@ namespace Trening
             {
                 suma+=tab[i].zarobki;
             }
-            Console.WriteLine();
             return suma;
         }
 
@@ -91,8 +116,7 @@ namespace Trening
                 charArray[j]=str[i];
             }
             string reverse=new string (charArray);
-            Console.WriteLine(reverse);
-            Console.WriteLine();
+            Console.WriteLine(reverse+"\n");
             
         }
         static double Dziel(int x, double y)
