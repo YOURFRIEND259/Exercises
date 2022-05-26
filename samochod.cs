@@ -61,12 +61,10 @@ class Rower : Pojazdy
         }
         public override void jaki_pojazd()
         {
-            Console.WriteLine("Dane Lodzi: \nMarka:{0} \ncena:{1:C} \nkolor:{2}",marka,cena,kolor);
-            Console.WriteLine();
+            Console.WriteLine("Dane Lodzi: \nMarka:{0} \ncena:{1:C} \nkolor:{2}",marka,cena,kolor+"\n");
         }
         public override void Jezdzi()
         {
-            Console.WriteLine("ta lodz nie jezdzi, bo plywa");
-            Console.WriteLine();
+            Console.WriteLine("ta lodz nie jezdzi, bo plywa"+"\n");
         }
     }
