@@ -6,21 +6,12 @@ namespace Trening
     {
         static void Main(string[] args)
         {
-            Thread mainThread=Thread.CurrentThread;
-            mainThread.Name="main thread";
 
-            Thread thread1=new Thread(CountDown);
-            Thread thread2=new Thread(CountUp);
-//            thread1.Start();
-//            thread2.Start();
-
-//            Console.WriteLine(mainThread.Name+" is complete!!!");
-            
+            Watki.CountDown();
             Meni.Menu();
             
             Samochod opel=new Samochod ("opel","jakis inny model",33.3,4500.00,"czerwony");
             Samochod sam1= new Samochod("BWM","jakis model",11.1,2200.00,"zieony");
-            
             Rower bmx=new Rower("BMX","x241",0,300,"czarny");
 
             sam1.Jezdzi();
@@ -50,25 +41,6 @@ namespace Trening
             Obliczenia.Reverse();
             Console.ReadKey();
         }
-        static void CountDown()
-        {
-            for(int i=10;i>=0;i--)
-            {
-                Console.WriteLine(":"+i+" seconds");
-                Thread.Sleep(1000);
-            }
-            Console.WriteLine("count down is complete!!!");
-            Console.ReadKey();
-        }
-        static void CountUp()
-        {
-            for(int i=0;i<=10;i++)
-            {
-                Console.WriteLine(":"+i+" seconds");
-                Thread.Sleep(1000);
-            }
-            Console.WriteLine("count up is complete!!!");
-            Console.ReadKey();
-        }
+
     } 
 }
