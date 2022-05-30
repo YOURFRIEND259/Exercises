@@ -16,12 +16,14 @@ namespace Trening
 
 //            Console.WriteLine(mainThread.Name+" is complete!!!");
             
-            Menu();
+            Meni.Menu();
             
             Samochod opel=new Samochod ("opel","jakis inny model",33.3,4500.00,"czerwony");
             Samochod sam1= new Samochod("BWM","jakis model",11.1,2200.00,"zieony");
-            sam1.Jezdzi();
+            
             Rower bmx=new Rower("BMX","x241",0,300,"czarny");
+
+            sam1.Jezdzi();
             bmx.jaki_pojazd();
             bmx.Jezdzi();
 
@@ -35,103 +37,74 @@ namespace Trening
                 p.wykaz_pracownikow();
             }
 
-            Console.WriteLine(Sumuj(tab)+"\n");
+            Sumuj(tab);
             tab[1].wykaz_pracownikow();
 
             sam1.jaki_pojazd();
             opel.jaki_pojazd();
 
-            Console.WriteLine("give string to revese: ");
-            var sting=Console.ReadLine();
-
-            Console.WriteLine(Dziel(2,2.5)+"\n");
-
-            Console.WriteLine("podaj pesel: ");
-            var pesel = Console.ReadLine();
-
-            if (!(int.TryParse(pesel, out int value)))
-            {
-                Console.WriteLine(Pesel(pesel!)+"\n");
-            }
-            else
-            {
-                Console.WriteLine("zla wartosc\n");
-            }
-            Console.WriteLine(NWD(2,3)+"\n");
-
-            Console.WriteLine(Prime(12)+"\n");
-
-            Reverse(sting);
+            Dzielenie.Dziel(2,2.5);
+            Pesel();
+            Najwd.NWD(2,3);
+            Prime(12);
+            Reverse();
             Console.ReadKey();
         }
 
-static void Menu()
-{            List<String> menu=new List<String>();
-            
-            menu.Add("carbonara");
-            menu.Add("pizza hawajska");
-            menu.Add("ratatuj");
-            menu.Add("beef wellington");
-            menu.Add("pomidorowa");
-            menu.Add("nalesniki");
 
-            foreach(String item in menu)
-            {
-                Console.WriteLine(item);
-            }
-            Console.ReadKey();}
-
-        static bool Prime(int liczba)
+        static void Prime(int liczba)
         {
             if(liczba<=0)
             {
                 Console.WriteLine("podano zla wartosc\n");
-                return false;
             }
-            if (liczba==1)return false;
-            if (liczba==2)return true;
+            if (liczba==1)Console.WriteLine(1+"\n");
+            if (liczba==2)Console.WriteLine(2+"\n");
             for(int i=3;i<liczba;i+=2)
             {
-                if(liczba%i==0) return false;
+                if(liczba%i==0) Console.WriteLine("it's not prime a number"+"\n");
+            
+                else if((liczba%i!=0)&&(i>=liczba)) Console.WriteLine("it is prime a number"+"\n");
             }
-            return true;
         }
 
-        public static double Sumuj(Pracownik[] tab)
+        static void Sumuj(Pracownik[] tab)
         {
             double suma=0;
             for(int i=0; i < tab.Length;i++)
             {
                 suma+=tab[i].zarobki;
             }
-            return suma;
+            Console.WriteLine("suma płac wynosi: "+suma+"\n");
         }
 
-        static void Reverse(string? str)
+        static void Reverse()
         {
-            char[] charArray=str!.ToCharArray();
-            for(int i=0, j=str.Length-1; i<j; i++, j--)
+            Console.WriteLine("give string to revese: ");
+            var sting=Console.ReadLine();
+            char[] charArray=sting!.ToCharArray();
+            for(int i=0, j=sting.Length-1; i<j; i++, j--)
             {
-                charArray[i]=str[j];
-                charArray[j]=str[i];
+                charArray[i]=sting[j];
+                charArray[j]=sting[i];
             }
             string reverse=new string (charArray);
             Console.WriteLine(reverse+"\n");
             
         }
-        static double Dziel(int x, double y)
-        {
-            return (y/x);
-        }
 
-        static string Pesel(string pesel)
+        static void Pesel()
         {
+
             int wynik = 0;
             int iloczyn=1;//mnoznik danej cyfry
             string n = "N";
             string d = "D";
-            string x= "zla wartosc ";
-            for(int i=0;i<pesel.Length;i++)
+            Console.WriteLine("podaj pesel: ");
+            var pesel = Console.ReadLine();
+            if (!(int.TryParse(pesel, out int value)))
+            {
+            for(int i=0;i<pesel?.Length;i++)
                 {
                     string cyfra=pesel.Substring(i,1);
                     int npesel = Int32.Parse(cyfra);
@@ -147,19 +120,20 @@ static void Menu()
                     wynik+=npesel*iloczyn;
                     iloczyn=iloczyn+2;
                 }
-            if(wynik>0)
+                if(wynik>0)
                 {
-                    if (wynik%10==0) return d;
-                    else return n;
+                    if (wynik%10==0) Console.WriteLine(d+"\n");
+                    else Console.WriteLine(n+"\n");
                 }
-            else return x;
+            }
+            else
+            {
+                Console.WriteLine("zla wartosc\n");
+            }
+
         }
 
-        static int NWD(int a, int b)
-        {
-            if(b==0) return a;
-            else return NWD(b, a%b);
-        }
+
         static void CountDown()
         {
             for(int i=10;i>=0;i--)
