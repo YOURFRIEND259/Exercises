@@ -43,11 +43,11 @@ namespace Trening
             sam1.jaki_pojazd();
             opel.jaki_pojazd();
 
-            Dzielenie.Dziel(2,2.5);
-            Psl.Pesel();
-            Najwd.NWD(86,12);
-            Pierwsza.Prime(12);
-            Odwrot.Reverse();
+            Obliczenia.Dziel(2,2.5);
+            Obliczenia.Pesel();
+            Obliczenia.NWD(86,12);
+            Obliczenia.Prime(12);
+            Obliczenia.Reverse();
             Console.ReadKey();
         }
         static void CountDown()
