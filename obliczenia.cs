@@ -1,18 +1,17 @@
 public class Obliczenia
 {
-    public int pierwsza;
-    public double druga;
-    public int a;
-    public int b;
-    public Obliczenia(int p, double dr,int c, int d)
+    private int pierwsza;
+    private double druga;
+    private int a=0;
+    private int b=0;
+    private Obliczenia(int p, double dr,int c, int d)
     {
         pierwsza=p;
-
         druga=dr;
         c=a;
         d=b;
-        
     }
+
     public static void Reverse()
     {
         Console.WriteLine("give string to revese: \n");
@@ -25,12 +24,13 @@ public class Obliczenia
         }
         string reverse=new string (charArray);
         Console.WriteLine(reverse+"\n");
-        
     }
+
     public static void Dziel(int pierwsza, double druga)
         {
             Console.WriteLine(pierwsza/druga+"\n");
         }
+
     public static void Prime(int liczba)
     {
         if(liczba<=0)
@@ -60,14 +60,9 @@ public class Obliczenia
             {
                 string cyfra=pesel.Substring(i,1);
                 int npesel = Int32.Parse(cyfra);
-                if ((iloczyn>9)||(i==10))
-                {
-                    iloczyn=1;
-                }
-                if (iloczyn==5)
-                {
-                    iloczyn=iloczyn+2;
-                }
+                if ((iloczyn>9)||(i==10)) iloczyn=1;
+
+                if (iloczyn==5) iloczyn=iloczyn+2;
                 wynik+=npesel*iloczyn;
                 iloczyn=iloczyn+2;
             }
@@ -84,13 +79,8 @@ public class Obliczenia
     }
     public static void NWD(int c,int d)
         {
-            
-            if(d==0) 
-            {
-                Console.WriteLine(c+"\n");
-            }
+            if(d==0)  Console.WriteLine(c+"\n");
             else  NWD(d, c%d);
-            
         }
 
 

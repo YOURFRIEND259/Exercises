@@ -1,6 +1,6 @@
     public class Pracownik
     {
-        public string nazwisko;
+        private string nazwisko;
         public double zarobki{set; get;}
 
         public Pracownik(string n, double x)
