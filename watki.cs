@@ -1,34 +1,35 @@
 class Watki
 {
     private static void watki()
-    {       
-        Thread mainThread=Thread.CurrentThread;
-        mainThread.Name="main thread";
-        Thread thread1=new Thread(CountDown);
-        Thread thread2=new Thread(CountUp);
+    {
+        Thread mainThread = Thread.CurrentThread;
+        mainThread.Name = "main thread";
+        Thread thread1 = new Thread(CountDown);
+        Thread thread2 = new Thread(CountUp);
 
         thread1.Start();
         thread2.Start();
-        
-        Console.WriteLine(mainThread.Name+" is complete!!!");}
-        public static void CountDown()
+
+        Console.WriteLine(mainThread.Name + " is complete!!!");
+    }
+    public static void CountDown()
+    {
+        for (int i = 10; i >= 0; i--)
         {
-            for(int i=10;i>=0;i--)
-            {
-                Console.WriteLine(":"+i+" seconds");
-                Thread.Sleep(1000);
-            }
-            Console.WriteLine("count down is complete!!!\n");
-            Console.ReadKey();
+            Console.WriteLine(":" + i + " seconds");
+            Thread.Sleep(1000);
         }
-        public static void CountUp()
+        Console.WriteLine("count down is complete!!!\n");
+        Console.ReadKey();
+    }
+    public static void CountUp()
+    {
+        for (int i = 0; i <= 10; i++)
         {
-            for(int i=0;i<=10;i++)
-            {
-                Console.WriteLine(":"+i+" seconds");
-                Thread.Sleep(1000);
-            }
-            Console.WriteLine("count up is complete!!!\n");
-            Console.ReadKey();
+            Console.WriteLine(":" + i + " seconds");
+            Thread.Sleep(1000);
         }
+        Console.WriteLine("count up is complete!!!\n");
+        Console.ReadKey();
+    }
 }

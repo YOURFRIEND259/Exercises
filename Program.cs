@@ -15,12 +15,23 @@ namespace Trening
             tab[1]=new Pracownik("Kowal",1200);
             tab[2]=new Pracownik("Koski",3200);
 
+            int[] intaray={1,2,56};
+            string[] straray={"asd","dfg","truit"};
+            double[] daray={2.3,1.2,0.0};
+
+            Obliczenia.displaySomething(intaray);
+            Obliczenia.displaySomething(straray);
+            Obliczenia.displaySomething(daray);
+ 
+            //Getting_Data.pobieranie();
+
+            Watki.CountDown();
+
             foreach(Pracownik p in tab)
             {
                 p.wykaz_pracownikow();
             }
 
-            Watki.CountDown();
             Meni.Menu();
 
             sam1.Jezdzi();
@@ -33,9 +44,10 @@ namespace Trening
             sam1.jaki_pojazd();
             opel.jaki_pojazd();
 
+            //stworzyc instancje do klasy oblicznia, ktore beda mialy ReadLine'a jako swoja zmienna
             Obliczenia.Dziel(2,2.5);
             Obliczenia.Pesel();
-            Obliczenia.NWD(86,12);
+            Obliczenia.NWD(13569,6546);
             Obliczenia.Prime(12);
             Obliczenia.Reverse();
             Console.ReadKey();
