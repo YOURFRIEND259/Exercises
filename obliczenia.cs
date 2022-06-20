@@ -6,16 +6,16 @@ public class Obliczenia : Getting_Data
     private int a { get; set; }
     private int b { get; set; }
 
-    private Obliczenia(int p, double dr, int c, int d)
-    {
-        pierwsza = p;
-        druga = dr;
-        c = a;
-        d = b;
-        d = b;
-    }
+    // private Obliczenia(int p, double dr, int c, int d)
+    // {
+    //     pierwsza = p;
+    //     druga = dr;
+    //     c = a;
+    //     d = b;
+    //     d = b;
+    // }
 
-    public static void Reverse()
+    public void Reverse()
     {
         Console.WriteLine("give string to revese: \n");
         string? sting = Console.ReadLine();
@@ -29,12 +29,12 @@ public class Obliczenia : Getting_Data
         Console.WriteLine(reverse + "\n");
     }
 
-    public static void Dziel(int pierwsza, double druga)
+    public void Dziel(int pierwsza, double druga)
     {
         Console.WriteLine(pierwsza / druga + "\n");
     }
 
-    public static void Prime(int liczba)
+    public void Prime(int liczba)
     {
         if (liczba <= 0)
         {
@@ -53,7 +53,7 @@ public class Obliczenia : Getting_Data
                 Console.WriteLine("it is prime a number" + "\n");
         }
     }
-    public static void Pesel()
+    public void Pesel()
     {
         int wynik = 0;
         int iloczyn = 1;//mnoznik danej cyfry
@@ -88,14 +88,14 @@ public class Obliczenia : Getting_Data
             Console.WriteLine("zla wartosc\n");
         }
     }
-    public static void NWD(int c, int d)
+    public void NWD(int c, int d)
     {
         if (d == 0) Console.WriteLine(c + "\n");
         else NWD(d, c % d);
     }
-    public static void displaySomething<T>(T[] aray)
+    public void displaySomething<T>(T[] aray)
     {
-        foreach(T item in aray)
+        foreach (T item in aray)
         {
             Console.WriteLine(item);
         }
