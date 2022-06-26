@@ -19,6 +19,8 @@ namespace Trening
             string[] straray = { "asd", "dfg", "truit" };
             double[] daray = { 2.3, 1.2, 0.0 };
 
+            Pracownik.ShowNumberOfEmploeeys();
+
             Obliczenia reverse = new Obliczenia();
             Obliczenia dziel = new Obliczenia();
             Obliczenia pesel = new Obliczenia();

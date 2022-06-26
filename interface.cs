@@ -14,7 +14,8 @@ class Workers : IWork
 {
     public void Buildings()
     {
-        Console.WriteLine("towers");
+        Console.WriteLine("tower");
+        Console.WriteLine("house");
     }
 }
 class Fighters : IFight
@@ -22,5 +23,6 @@ class Fighters : IFight
     public void Attacks()
     {
         Console.WriteLine("punch");
+        Console.WriteLine("kick");
     }
 }
