@@ -19,6 +19,9 @@ namespace Trening
             string[] straray = { "asd", "dfg", "truit" };
             double[] daray = { 2.3, 1.2, 0.0 };
 
+            Singleton singleton = Singleton.Instance;
+            singleton.Opis();
+
             Pracownik.ShowNumberOfEmploeeys();
 
             Obliczenia reverse = new Obliczenia();
