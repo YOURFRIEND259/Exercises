@@ -11,7 +11,7 @@ namespace Trening
             Rower bmx = new Rower("BMX", "x241", 0, 300, "czarny");
 
             Pracownik[] tab = new Pracownik[3];
-            tab[0] = new Pracownik("Kowallski", 2200);
+            tab[0] = new Pracownik("Kowalski", 2200);
             tab[1] = new Pracownik("Kowal", 1200);
             tab[2] = new Pracownik("Koski", 3200);
 
