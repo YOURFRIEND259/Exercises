@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kubab\\Documents\\spoj\\spoj.csproj": {}
+    "C:\\Users\\kubab\\Documents\\Main Project\\zadania\\spoj.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kubab\\Documents\\spoj\\spoj.csproj": {
+    "C:\\Users\\kubab\\Documents\\Main Project\\zadania\\spoj.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kubab\\Documents\\spoj\\spoj.csproj",
+        "projectUniqueName": "C:\\Users\\kubab\\Documents\\Main Project\\zadania\\spoj.csproj",
         "projectName": "spoj",
-        "projectPath": "C:\\Users\\kubab\\Documents\\spoj\\spoj.csproj",
+        "projectPath": "C:\\Users\\kubab\\Documents\\Main Project\\zadania\\spoj.csproj",
         "packagesPath": "C:\\Users\\kubab\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kubab\\Documents\\spoj\\obj\\",
+        "outputPath": "C:\\Users\\kubab\\Documents\\Main Project\\zadania\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kubab\\AppData\\Roaming\\NuGet\\NuGet.Config"

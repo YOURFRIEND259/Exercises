@@ -18,7 +18,9 @@ namespace Trening
             int[] intaray = { 1, 2, 56 };
             string[] straray = { "asd", "dfg", "truit" };
             double[] daray = { 2.3, 1.2, 0.0 };
-
+            BetterFibb.mymemo=new long[36];
+            Console.WriteLine("\n{0}", BetterFibb.FibbonaciButBetter(35,false));
+            
             Singleton singleton = Singleton.Instance;
             singleton.Opis();
 

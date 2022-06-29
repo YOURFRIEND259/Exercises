@@ -103,6 +103,7 @@ public class Obliczenia : Getting_Data
     }
 
 
+
 }
 //tutaj beda wszystkie pobierania danych z klasy "Obliczenia" 
 
@@ -117,7 +118,4 @@ public class Getting_Data
         int nwd_1 = Convert.ToInt32(Console.ReadLine());
         int nwd_2 = Convert.ToInt32(Console.ReadLine());
     }
-
-
-
 }
