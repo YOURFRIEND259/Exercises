@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Threading;
+using NUnit.Framework;
 namespace Trening
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Samochod opel = new Samochod("opel", "jakis inny model", 33.3, 4500.00, "czerwony");
             Samochod sam1 = new Samochod("BWM", "jakis model", 11.1, 2200.00, "zieony");
@@ -72,6 +73,18 @@ namespace Trening
             reverse.Reverse();
             Console.ReadKey();
         }
-
+    }
+    [TestFixture]
+    class ProgramTest
+    {
+        // Obliczenia dzieli = new Obliczenia();
+        [TestCase(4,2.0,2)]
+        [TestCase(42,2.0,21)]
+        [TestCase(10,2.0,5)]
+        public void WynikDziel(int x, double y,int z)
+        {
+            double result=x/y;
+            Assert.AreEqual(z, result);
+        }
     }
 }
