@@ -19,6 +19,7 @@ namespace Trening
             int[] intaray = { 1, 2, 56 };
             string[] straray = { "asd", "dfg", "truit" };
             double[] daray = { 2.3, 1.2, 0.0 };
+            
             BetterFibb.mymemo=new long[36];
             Console.WriteLine("\n{0}", BetterFibb.FibbonaciButBetter(35,false));
             
@@ -33,6 +34,18 @@ namespace Trening
             Obliczenia prime = new Obliczenia();
             Obliczenia nwd = new Obliczenia();
             Obliczenia disp = new Obliczenia();
+
+            Director director = new Director();
+            Builder b1 = new ConcreteBuilder_1();
+            Builder b2 = new ConcreteBuilder_2();
+
+            director.Construct(b1);
+            Product p1 = b1.GetResult();
+            p1.Show();
+            director.Construct(b2);
+            Product p2 = b2.GetResult();
+            p2.Show();
+
 
             disp.displaySomething(intaray);
             disp.displaySomething(straray);
@@ -81,6 +94,7 @@ namespace Trening
         [TestCase(4,2.0,2)]
         [TestCase(42,2.0,21)]
         [TestCase(10,2.0,5)]
+        [Test]
         public void WynikDziel(int x, double y,int z)
         {
             double result=x/y;
