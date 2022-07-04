@@ -19,12 +19,12 @@ namespace Trening
             int[] intaray = { 1, 2, 56 };
             string[] straray = { "asd", "dfg", "truit" };
             double[] daray = { 2.3, 1.2, 0.0 };
-            
-            BetterFibb.mymemo=new long[36];
-            Console.WriteLine("\n{0}", BetterFibb.FibbonaciButBetter(35,false));
-            
+                        
             Singleton singleton = Singleton.Instance;
             singleton.Opis();
+
+            BetterFibb.mymemo=new long[36];
+            Console.WriteLine("\n{0}", BetterFibb.FibbonaciButBetter(35,false));
 
             Pracownik.ShowNumberOfEmploeeys();
 
@@ -35,16 +35,16 @@ namespace Trening
             Obliczenia nwd = new Obliczenia();
             Obliczenia disp = new Obliczenia();
 
-            Director director = new Director();
-            Builder b1 = new ConcreteBuilder_1();
-            Builder b2 = new ConcreteBuilder_2();
-
-            director.Construct(b1);
-            Product p1 = b1.GetResult();
-            p1.Show();
-            director.Construct(b2);
-            Product p2 = b2.GetResult();
-            p2.Show();
+            VehicleBuilder builder;
+            Shop shop= new Shop();
+            
+            builder= new BicycleBuilder();
+            shop.Construct(builder);
+            builder.Vehicle.Show();
+            
+            builder= new CarBuilder();
+            shop.Construct(builder);
+            builder.Vehicle.Show();
 
 
             disp.displaySomething(intaray);

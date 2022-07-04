@@ -1,63 +1,95 @@
-abstract class Builder
+abstract class VehicleBuilder
 {
-    public abstract void BuildPartA();
-    public abstract void BuildPartB();
-    public abstract Product GetResult();
+    protected Vehicle vehicle=null!;
 
+    public Vehicle Vehicle
+    {
+        get{return vehicle; }
+    }
+    public abstract void BuildFrame();
+    public abstract void BuildEngine();
+    public abstract void Buildwheels();
+    public abstract void BuildDoors();
 }
 
-class Product
+class Vehicle
 {
-    private List<string> _parts = new List<string>();
-    public void Add(string part)
+    private string _vehicleType;
+    private Dictionary<string, string>_parts=
+    new Dictionary<string, string>();
+    public Vehicle(string vehicleType)
     {
-        _parts.Add(part);
+        this._vehicleType=vehicleType;
+    }
+    public string this[string key]
+    {
+        get{return _parts[key];}
+        set{_parts[key]=value ;}
     }
     public void Show()
     {
-        Console.WriteLine("\nProduct Parts -------");
-        foreach (string part in _parts)
-            Console.WriteLine(part);
+        Console.WriteLine("\n ------------------");
+        Console.WriteLine("Vehicle type: {0}",_vehicleType);
+        Console.WriteLine("Frame: {0}",_parts["frame"]);
+        Console.WriteLine("Engine: {0}",_parts["engine"]);
+        Console.WriteLine("Doors: {0}",_parts["doors"]);
+        Console.WriteLine("Wheels: {0}",_parts["wheels"]);
     }
 }
 
-class Director
+class Shop
 {
-    public void Construct(Builder builder)
+    public void Construct(VehicleBuilder vehicleBuilder)
     {
-        builder.BuildPartA();
-        builder.BuildPartB();
+        vehicleBuilder.BuildFrame();
+        vehicleBuilder.BuildEngine();
+        vehicleBuilder.Buildwheels();
+        vehicleBuilder.BuildDoors();
     }
 }
-class ConcreteBuilder_1 : Builder
+class BicycleBuilder : VehicleBuilder
 {
-    private Product _product = new Product();
-    public override void BuildPartA()
+    public BicycleBuilder()
     {
-        _product.Add("PartA");
+        vehicle= new Vehicle("Bicycle");
     }
-    public override void BuildPartB()
+    public override void BuildDoors()
     {
-        _product.Add("PartB");
+        vehicle["doors"]="0";
     }
-    public override Product GetResult()
+        public override void BuildEngine()
     {
-        return _product;
+        vehicle["engine"]="0";
+    }
+        public override void BuildFrame()
+    {
+        vehicle["frame"]="Bicycle Frame";
+    }    
+    public override void Buildwheels()
+    {
+        vehicle["wheels"]="2";
     }
 }
-class ConcreteBuilder_2 : Builder
+class CarBuilder : VehicleBuilder
 {
-    private Product _product = new Product();
-    public override void BuildPartA()
+    public CarBuilder()
     {
-        _product.Add("PartX");
+        vehicle= new Vehicle("Car");
     }
-    public override void BuildPartB()
+    public override void BuildDoors()
     {
-        _product.Add("PartY");
+        vehicle["doors"]="4";
     }
-    public override Product GetResult()
+        public override void BuildEngine()
     {
-        return _product;
+        vehicle["engine"]="2500 cc";
+    }
+        public override void BuildFrame()
+    {
+        vehicle["frame"]="Car Frame";
+    }    
+    public override void Buildwheels()
+    {
+        vehicle["wheels"]="4";
     }
 }
