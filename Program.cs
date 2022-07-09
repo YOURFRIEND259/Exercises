@@ -19,6 +19,7 @@ namespace Trening
             int[] intaray = { 1, 2, 56 };
             string[] straray = { "asd", "dfg", "truit" };
             double[] daray = { 2.3, 1.2, 0.0 };
+            int[] nummulti= {-5,1,-2,-3,4,1};
                         
             Singleton singleton = Singleton.Instance;
             singleton.Opis();
@@ -27,13 +28,17 @@ namespace Trening
             Console.WriteLine("\n{0}", BetterFibb.FibbonaciButBetter(35,false));
 
             Pracownik.ShowNumberOfEmploeeys();
-
+            Obliczenia BiggestSumOfThree= new Obliczenia();
             Obliczenia reverse = new Obliczenia();
             Obliczenia dziel = new Obliczenia();
             Obliczenia pesel = new Obliczenia();
             Obliczenia prime = new Obliczenia();
             Obliczenia nwd = new Obliczenia();
             Obliczenia disp = new Obliczenia();
+
+            BaseTest test= new BaseTest();
+
+            test.testmethod();
 
             VehicleBuilder builder;
             Shop shop= new Shop();
@@ -57,6 +62,8 @@ namespace Trening
             Workers workers = new Workers();
             fighters.Attacks();
             workers.Buildings();
+
+            BiggestSumOfThree.BiggestSumOf3(nummulti);
 
             Watki.CountDown();
 

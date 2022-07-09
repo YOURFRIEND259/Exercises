@@ -5,9 +5,21 @@ abstract class Pojazdy
     public string kolor { get; set; } = null!;
     public double pojemnosc { get; set; }
     public double cena { get; set; }
-    public abstract void Jezdzi();
-    public abstract void jaki_pojazd();
+    public virtual void Jezdzi()
+    {}
+    public virtual void jaki_pojazd()
+    {}
+    public string something="something";
 
+}
+class BaseTest:Pojazdy
+{
+    public string something="something2";
+    public void testmethod()
+    {
+        Console.WriteLine (this.something);
+        Console.WriteLine (base.something);
+    }
 }
 class Samochod : Pojazdy
 {

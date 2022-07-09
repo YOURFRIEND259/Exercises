@@ -15,6 +15,15 @@ public class Obliczenia : Getting_Data
     //     d = b;
     // }
 
+    public void BiggestSumOf3(int []nums)
+    {
+        Array.Sort(nums);
+        
+        int x = nums.Length;
+        int a=nums[x-1]*nums[x-2]*nums[x-3];
+        int b=nums[x-1]*nums[0]*nums[1];
+        Console.WriteLine("\n--------\n mulitplying 3 biggest nums: {0}\n--------\n mulitplying 2 lowest nums and 1 biggest: {1}\n--------",a,b);
+    }
     public void Reverse()
     {
         Console.WriteLine("give string to revese: \n");
