@@ -51,6 +51,9 @@ namespace Trening
             shop.Construct(builder);
             builder.Vehicle.Show();
 
+            Sorting buble = new Sorting();
+
+            buble.bubbleSort();
 
             disp.displaySomething(intaray);
             disp.displaySomething(straray);

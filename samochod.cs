@@ -14,7 +14,7 @@ abstract class Pojazdy
 }
 class BaseTest:Pojazdy
 {
-    public string something="something2";
+    public new string something="something2";
     public void testmethod()
     {
         Console.WriteLine (this.something);
