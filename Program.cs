@@ -19,16 +19,22 @@ namespace Trening
             int[] intaray = { 1, 2, 56 };
             string[] straray = { "asd", "dfg", "truit" };
             double[] daray = { 2.3, 1.2, 0.0 };
-            int[] nummulti= {-5,1,-2,-3,4,1};
-                        
+            int[] nummulti = { -5, 1, -2, -3, 4, 1 };
+
             Singleton singleton = Singleton.Instance;
             singleton.Opis();
 
-            BetterFibb.mymemo=new long[36];
-            Console.WriteLine("\n{0}", BetterFibb.FibbonaciButBetter(35,false));
+            Sorting buble = new Sorting();
+            Sorting insert = new Sorting();
+
+            buble.bubbleSort();
+            insert.InstertionSort();
+
+            BetterFibb.mymemo = new long[36];
+            Console.WriteLine("\n{0}", BetterFibb.FibbonaciButBetter(35, false));
 
             Pracownik.ShowNumberOfEmploeeys();
-            Obliczenia BiggestSumOfThree= new Obliczenia();
+            Obliczenia BiggestSumOfThree = new Obliczenia();
             Obliczenia reverse = new Obliczenia();
             Obliczenia dziel = new Obliczenia();
             Obliczenia pesel = new Obliczenia();
@@ -36,24 +42,20 @@ namespace Trening
             Obliczenia nwd = new Obliczenia();
             Obliczenia disp = new Obliczenia();
 
-            BaseTest test= new BaseTest();
+            BaseTest test = new BaseTest();
 
             test.testmethod();
 
             VehicleBuilder builder;
-            Shop shop= new Shop();
-            
-            builder= new BicycleBuilder();
-            shop.Construct(builder);
-            builder.Vehicle.Show();
-            
-            builder= new CarBuilder();
+            Shop shop = new Shop();
+
+            builder = new BicycleBuilder();
             shop.Construct(builder);
             builder.Vehicle.Show();
 
-            Sorting buble = new Sorting();
-
-            buble.bubbleSort();
+            builder = new CarBuilder();
+            shop.Construct(builder);
+            builder.Vehicle.Show();
 
             disp.displaySomething(intaray);
             disp.displaySomething(straray);
@@ -101,13 +103,13 @@ namespace Trening
     class ProgramTest
     {
         // Obliczenia dzieli = new Obliczenia();
-        [TestCase(4,2.0,2)]
-        [TestCase(42,2.0,21)]
-        [TestCase(10,2.0,5)]
+        [TestCase(4, 2.0, 2)]
+        [TestCase(42, 2.0, 21)]
+        [TestCase(10, 2.0, 5)]
         [Test]
-        public void WynikDziel(int x, double y,int z)
+        public void WynikDziel(int x, double y, int z)
         {
-            double result=x/y;
+            double result = x / y;
             Assert.AreEqual(z, result);
         }
     }
