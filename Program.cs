@@ -26,9 +26,11 @@ namespace Trening
 
             Sorting buble = new Sorting();
             Sorting insert = new Sorting();
+            Sorting merge = new Sorting();
 
-            buble.bubbleSort();
+            buble.BubbleSort();
             insert.InstertionSort();
+            merge.MergeSort();
 
             BetterFibb.mymemo = new long[36];
             Console.WriteLine("\n{0}", BetterFibb.FibbonaciButBetter(35, false));
